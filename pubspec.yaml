@@ -41,6 +41,7 @@ dependencies:
   flutter_bloc:
   bloc:
   dio:
+  carousel_slider:
 dev_dependencies:
   flutter_test:
     sdk: flutter
