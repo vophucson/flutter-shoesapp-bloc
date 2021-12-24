@@ -7,7 +7,8 @@ class FadeInAnimation extends StatelessWidget {
   final int delay;
   final Widget child;
 
-  FadeInAnimation({required this.delay, required this.child});
+  const FadeInAnimation({Key? key, required this.delay, required this.child})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class FadeInAnimation extends StatelessWidget {
 
     return PlayAnimation<MultiTweenValues<_AniProps>>(
       delay: Duration(milliseconds: 300 * delay),
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       tween: tween,
       child: child,
       // curve: ,

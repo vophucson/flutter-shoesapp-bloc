@@ -7,7 +7,8 @@ class SideInAnimation extends StatelessWidget {
   final int delay;
   final Widget child;
 
-  SideInAnimation({required this.delay, required this.child});
+  const SideInAnimation({Key? key, required this.delay, required this.child})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +17,14 @@ class SideInAnimation extends StatelessWidget {
       ..add(
         _AniProps.translateX,
         Tween(begin: 30.0, end: 0.0),
-        Duration(milliseconds: 500),
+        const Duration(milliseconds: 500),
         // Curves.fastOutSlowIn,
         Curves.easeIn,
       );
 
     return PlayAnimation<MultiTweenValues<_AniProps>>(
       delay: Duration(milliseconds: 300 * delay),
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       tween: tween,
       child: child,
       // curve: ,

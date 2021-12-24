@@ -38,6 +38,9 @@ dependencies:
   simple_animations:
   google_fonts:
   equatable:
+  flutter_bloc:
+  bloc:
+  dio:
 dev_dependencies:
   flutter_test:
     sdk: flutter
