@@ -7,6 +7,7 @@ import '../side_in_animation.dart';
 
 class HomeBanner extends StatelessWidget {
   const HomeBanner({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     context.read<BannerBloc>().add(BannerFetched());
@@ -36,21 +37,22 @@ class HomeBanner extends StatelessWidget {
                       itemBuilder:
                           (BuildContext context, int index, int realIndex) {
                         final urlImage = state.data[index].image;
-                        return buildImage(urlImage, index);
+                        return buildImage(urlImage);
                       },
                       itemCount: state.data.length,
                     )),
               );
-            } else {
+            } else if (state is BannerFailure) {
               return const Center(
-                child: Text('Đã có lôi xảy ra'),
+                child: Text('Không lấy được dữ liệu'),
               );
             }
+            return const Center(child: Text('Other states..'));
           },
         ));
   }
 
-  Widget buildImage(String urlImage, int index) {
+  Widget buildImage(String urlImage) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 5),
       color: Colors.grey,
