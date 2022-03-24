@@ -1,1 +1,1 @@
-Desgin Web Adim using Flutter/Dart. G/Bloc
+Desgin App using Flutter/Dart. G/Bloc
