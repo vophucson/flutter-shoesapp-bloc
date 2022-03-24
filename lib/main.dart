@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoesappbloc/Views/dashboard.dart';
+import 'package:shoesappbloc/blocs/bloc/product_bloc.dart';
+import 'package:shoesappbloc/blocs/bloc/productbycid_bloc.dart';
 
 void main() {
   runApp(const MyApp());

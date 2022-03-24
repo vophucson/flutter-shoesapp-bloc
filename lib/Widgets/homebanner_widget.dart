@@ -1,8 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoesappbloc/Blocs/banner_bloc.dart';
-
+import 'package:shoesappbloc/blocs/bloc/banner_bloc.dart';
 import '../side_in_animation.dart';
 
 class HomeBanner extends StatelessWidget {
@@ -31,7 +30,7 @@ class HomeBanner extends StatelessWidget {
                       options: CarouselOptions(
                           height: 250,
                           autoPlay: true,
-                          autoPlayInterval: const Duration(seconds: 2),
+                          autoPlayInterval: const Duration(seconds: 5),
                           enlargeCenterPage: true,
                           enlargeStrategy: CenterPageEnlargeStrategy.scale),
                       itemBuilder:
@@ -46,6 +45,17 @@ class HomeBanner extends StatelessWidget {
               return const Center(
                 child: Text('Không lấy được dữ liệu'),
               );
+            } else if (state is BannerInitial) {
+              return Center(
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 80,
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          fit: BoxFit.contain,
+                          image: AssetImage('assets/loading-bar.png'))),
+                ),
+              );
             }
             return const Center(child: Text('Other states..'));
           },
@@ -54,11 +64,10 @@ class HomeBanner extends StatelessWidget {
 
   Widget buildImage(String urlImage) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 5),
-      color: Colors.grey,
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       child: Image.network(
         urlImage,
-        fit: BoxFit.cover,
+        fit: BoxFit.contain,
       ),
     );
   }

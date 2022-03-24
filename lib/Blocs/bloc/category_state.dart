@@ -17,9 +17,6 @@ class CategorySuccess extends CategoryState {
   const CategorySuccess({required this.categories});
   @override
   List<Object> get props => [categories];
-  CategorySuccess copyWith({List<CategoryModel>? categories}) {
-    return CategorySuccess(categories: categories ?? this.categories);
-  }
 }
 
 class CategoryFailure extends CategoryState {}

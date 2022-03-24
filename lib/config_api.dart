@@ -7,7 +7,7 @@ class Config {
   static String product = 'Api/Product/';
   static String allProduct = 'GetAllProduct';
   static String viewProductdetail = 'ViewProductDetail?productId=';
-  static String viewcategoryproduct = 'GetProductById?categoryId=';
+  static String productByCategoryId = 'GetProductById?categoryId=';
   static String addtocart = '/AddToCart';
   static String order = 'api/order';
   static String viewCart = '/viewCart?userId=';

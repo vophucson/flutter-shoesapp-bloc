@@ -17,9 +17,6 @@ class BannerSuccess extends BannerState {
   });
   @override
   List<Object?> get props => [data];
-  BannerSuccess copyWith({List<BannerModel>? data}) {
-    return BannerSuccess(data: data ?? this.data);
-  }
 }
 
 class BannerFailure extends BannerState {}

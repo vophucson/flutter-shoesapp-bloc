@@ -2,7 +2,6 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shoesappbloc/fade_in_animation.dart';
-
 import 'homepage.dart';
 
 class DashBoard extends StatefulWidget {

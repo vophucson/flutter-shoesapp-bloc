@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoesappbloc/Blocs/banner_bloc.dart';
 import 'package:shoesappbloc/Blocs/bloc/category_bloc.dart';
 import 'package:shoesappbloc/Widgets/homebanner_widget.dart';
+import 'package:shoesappbloc/blocs/bloc/banner_bloc.dart';
+import 'package:shoesappbloc/blocs/bloc/product_bloc.dart';
 import 'package:shoesappbloc/widgets/homecategory_widget.dart';
+import 'package:shoesappbloc/widgets/homeproduct_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,7 +16,8 @@ class HomePage extends StatelessWidget {
         body: MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => BannerBloc()),
-        BlocProvider(create: (context) => CategoryBloc())
+        BlocProvider(create: (context) => CategoryBloc()),
+        BlocProvider(create: (context) => ProductBloc()),
       ],
       child: Container(
         color: Colors.white,
@@ -24,6 +27,9 @@ class HomePage extends StatelessWidget {
               key: key,
             ),
             HomeCategory(
+              key: key,
+            ),
+            HomeProduct(
               key: key,
             )
           ],
